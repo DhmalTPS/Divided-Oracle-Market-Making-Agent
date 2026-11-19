@@ -11,3 +11,5 @@
 # The organiser kit (engine, rulebook, reference bots) is not redistributed.
 Production/
 __pycache__/
+
+!/LICENSE
