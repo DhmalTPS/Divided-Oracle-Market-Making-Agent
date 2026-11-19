@@ -1,0 +1,13 @@
+# Whitelist: ignore everything, then allow only the published files.
+*
+!.gitignore
+!README.md
+!my_bot.py
+!quantstorm_v2.py
+!eval/
+!eval/run_eval.py
+!eval/results.csv
+
+# The organiser kit (engine, rulebook, reference bots) is not redistributed.
+Production/
+__pycache__/
