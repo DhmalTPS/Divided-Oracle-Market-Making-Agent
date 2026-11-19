@@ -44,8 +44,7 @@ Every method is wrapped so that unexpected observation shapes degrade to a safe 
 ## Results
 
 During the event (logs not retained in this repository):
-- V1 scored **+51.53** cumulative PnL on the organisers' practice leaderboard, which plays each entry against 10 hidden standard bots on fixed seeds.
-- The bots were evaluated over 30 practice matches against 10 opponents.
+- V1 scored **+51.53** cumulative PnL on the organisers' practice leaderboard, which plays each entry against 10 hidden standard bots on a fixed seed (figure as recorded in the V2 docstring, `quantstorm_v2.py:9`; the leaderboard is not archived).
 
 Reproducible re-run against the three public reference strategies, using the official engine (`eval/run_eval.py`). Each cell is total PnL in ticks for the row bot over one mirrored match of 20 deals; positive means the row bot won.
 
@@ -90,10 +89,10 @@ python /path/to/kit/backtester.py --bot1 quantstorm_v2.py --bot2 /path/to/kit/st
 python /path/to/kit/backtester.py --validate quantstorm_v2.py
 ```
 
-Both bot files pass the kit's `--validate` check.
+Both bot files passed the kit's `--validate` check when run locally (output not committed).
 
 ## Notes and limitations
 
 - The per-round power value table is hand-calibrated and shared by V1 and V2. No closed form exists for it without the field's bid distribution, so it is the main remaining source of tuning risk.
 - The opponent model assumes honest Maker centring (the rulebook's own measurements indicate quote distortion does not pay under the maker obligation). Against a deliberately deceptive Maker the trust factor and feasibility clipping cap, but do not remove, the damage.
-- The submission header's name and roll-number fields have been redacted for public release. V2's docstring refers to V1 as `my_bot_v1.py`; in this repository V1 is `my_bot.py`.
+- The submission header's name and roll-number fields have been redacted for public release. V2's docstring titles itself `my_bot.py` and refers to V1 as `my_bot_v1.py` (the submission file names); in this repository they are `quantstorm_v2.py` and `my_bot.py`. References to `RULEBOOK.md` in the docstrings point to the organisers' rulebook, which is not redistributed.
